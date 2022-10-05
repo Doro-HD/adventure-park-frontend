@@ -6,3 +6,19 @@
     font-weight: bold;
  }
 
+.main-text-box{
+
+    margin: 25px;
+    width: auto;
+    height: 200px;
+    background-color: greenyellow;
+    background-position: center;
+    opacity: 0.67;
+
+}
+.border-left{
+    background-position: left;
+    background-color: black;
+    height: auto;
+    width: 200px;
+}
