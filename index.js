@@ -12,11 +12,11 @@ import { initFindUser } from "./pages/findUser/findUser.js"
 
 window.addEventListener("load", async () => {
 
-  const templateAbout = await loadHtml("./pages/about/about.html")
-  const templateUsers = await loadHtml("./pages/users/users.html")
-  const templateFindUser = await loadHtml("./pages/findUser/findUser.html")
-  const templateNavigate = await loadHtml("./pages/navigate/navigate.html")
-  const templateMatch = await loadHtml("./pages/show-match/match.html")
+  const templateGocart = await loadHtml("./pages/gocart/gocart.html")
+  const templateGocart = await loadHtml("./pages/gocart/gocart.html")
+  const templateMinigolf = await loadHtml("./pages/minigolf/minigolf.html")
+  const templatePaintball = await loadHtml("./pages/paintball/paintball.html")
+  const templateWrestling = await loadHtml("./pages/sumoWrestling/sumoWrestling.html")
   const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
 
   adjustForMissingHash()
