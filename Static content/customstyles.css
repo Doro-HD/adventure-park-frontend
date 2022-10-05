@@ -1,6 +1,6 @@
-div {
+.my-section {
     /* Background pattern from Toptal Subtle Patterns */
     background-image: url("https://amymhaddad.s3.amazonaws.com/morocco-blue.png");
-    height: 400px;
+    height: 100%;
     width: 100%;
  }
