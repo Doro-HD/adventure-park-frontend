@@ -14,7 +14,7 @@ import {
 window.addEventListener("load", async () => {
 
   const templateGocart = await loadHtml("./pages/gocart/gocart.html")
-  const templateHome = await loadHtml("./pages/gocart/home.html")
+  const templateHome = await loadHtml("./pages/home/home.html")
   const templateMinigolf = await loadHtml("./pages/minigolf/minigolf.html")
   const templatePaintball = await loadHtml("./pages/paintball/paintball.html")
   const templateWrestling = await loadHtml("./pages/sumoWrestling/sumoWrestling.html")
@@ -35,13 +35,10 @@ window.addEventListener("load", async () => {
         })
         .on({
 
-            //For very simple "templates", you can just insert your HTML directly like below
-            "/": () => document.getElementById("content").innerHTML =
-                `<h2>Home</h2>
-      <p style='margin-top:2em'>
-      This is the content of the Home Route
-      </p>
-     `,
+          "/": () => {
+            renderTemplate(templateHome, "content")
+            console.log('test')
+        },
             "/gocart": () => {
                 renderTemplate(templateGocart, "content")
                 console.log('test')
@@ -51,7 +48,7 @@ window.addEventListener("load", async () => {
                 renderTemplate(templateMinigolf, "content")
 
             },
-            "/Paintball": (match) => {
+            "/paintball": (match) => {
                 renderTemplate(templatePaintball, "content")
 
             },
