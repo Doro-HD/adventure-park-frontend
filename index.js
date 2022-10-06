@@ -19,8 +19,8 @@ window.addEventListener("load", async () => {
   const templatePaintball = await loadHtml("./pages/paintball/paintball.html")
   const templateWrestling = await loadHtml("./pages/sumoWrestling/sumoWrestling.html")
   const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
-
   adjustForMissingHash()
+
 
   const router = new Navigo("/", { hash: true });
   //Not especially nice, BUT MEANT to simplify things. Make the router global so it can be accessed from all js-files
@@ -42,7 +42,10 @@ window.addEventListener("load", async () => {
       This is the content of the Home Route
       </p>
      `,
-      "/gocart": () => renderTemplate(templateGocart, "content"),
+      "/gocart": () => {
+        renderTemplate(templateGocart, "content")
+        console.log('test')
+      },
 
       "/users": () => {
         renderTemplate(templateUsers, "content")
