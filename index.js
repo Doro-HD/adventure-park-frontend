@@ -5,14 +5,15 @@ import {
   setActiveLink, adjustForMissingHash, renderTemplate, loadHtml
 } from "./utils.js"
 
-import { initNavigate } from "./pages/navigate/navigate.js"
-import { showMatchObject } from "./pages/show-match/match.js"
-import { initUsers } from "./pages/users/users.js"
-import { initFindUser } from "./pages/findUser/findUser.js"
+
+
+//import { initNavigate } from "./pages/navigate/navigate.js"
+//import { showMatchObject } from "./pages/show-match/match.js"
+//import { initUsers } from "./pages/users/users.js"
+//import { initFindUser } from "./pages/findUser/findUser.js"
 
 window.addEventListener("load", async () => {
 
-  const templateGocart = await loadHtml("./pages/gocart/gocart.html")
   const templateGocart = await loadHtml("./pages/gocart/gocart.html")
   const templateMinigolf = await loadHtml("./pages/minigolf/minigolf.html")
   const templatePaintball = await loadHtml("./pages/paintball/paintball.html")
@@ -33,6 +34,7 @@ window.addEventListener("load", async () => {
       }
     })
     .on({
+
       //For very simple "templates", you can just insert your HTML directly like below
       "/": () => document.getElementById("content").innerHTML =
         `<h2>Home</h2>
@@ -40,7 +42,7 @@ window.addEventListener("load", async () => {
       This is the content of the Home Route
       </p>
      `,
-      "/about": () => renderTemplate(templateAbout, "content"),
+      "/gocart": () => renderTemplate(templateGocart, "content"),
 
       "/users": () => {
         renderTemplate(templateUsers, "content")
