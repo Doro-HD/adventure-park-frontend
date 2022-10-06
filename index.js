@@ -15,6 +15,7 @@ import {
 window.addEventListener("load", async () => {
 
   const templateGocart = await loadHtml("./pages/gocart/gocart.html")
+  const templateHome = await loadHtml("./pages/gocart/home.html")
   const templateMinigolf = await loadHtml("./pages/minigolf/minigolf.html")
   const templatePaintball = await loadHtml("./pages/paintball/paintball.html")
   const templateWrestling = await loadHtml("./pages/sumoWrestling/sumoWrestling.html")
