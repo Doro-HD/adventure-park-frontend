@@ -37,11 +37,9 @@ window.addEventListener("load", async () => {
 
           "/": () => {
             renderTemplate(templateHome, "content")
-            console.log('test')
         },
             "/gocart": () => {
                 renderTemplate(templateGocart, "content")
-                console.log('test')
             },
 
             "/minigolf": () => {
