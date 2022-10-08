@@ -5,6 +5,9 @@ import {
     setActiveLink, adjustForMissingHash, renderTemplate, loadHtml
 } from "./utils.js"
 
+import {
+    fetchGetAllJSON
+} from "./apifetch.js"
 
 //import { initNavigate } from "./pages/navigate/navigate.js"
 //import { showMatchObject } from "./pages/show-match/match.js"
@@ -13,11 +16,8 @@ import {
 
 window.addEventListener("load", async () => {
 
-  const templateGocart = await loadHtml("./pages/gocart/gocart.html")
+  const templateAktiviteter = await loadHtml("./pages/aktiviteter/aktiviteter.html")
   const templateHome = await loadHtml("./pages/home/home.html")
-  const templateMinigolf = await loadHtml("./pages/minigolf/minigolf.html")
-  const templatePaintball = await loadHtml("./pages/paintball/paintball.html")
-  const templateWrestling = await loadHtml("./pages/sumoWrestling/sumoWrestling.html")
   const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
   adjustForMissingHash()
 
@@ -38,27 +38,12 @@ window.addEventListener("load", async () => {
           "/": () => {
             renderTemplate(templateHome, "content")
         },
-            "/gocart": () => {
-                renderTemplate(templateGocart, "content")
-            },
+            "/aktiviteter": () => {
+                renderTemplate(templateAktiviteter, "content")
+                console.log(fetchMoviesJSON().then(movies => {
+                    movies; // fetched movies
+                  }))
 
-            "/minigolf": () => {
-                renderTemplate(templateMinigolf, "content")
-
-            },
-            "/paintball": (match) => {
-                renderTemplate(templatePaintball, "content")
-
-            },
-
-            "/sumo": () => {
-                renderTemplate(templateWrestling, "content")
-
-            },
-
-            "/show-match": (match) => {
-                renderTemplate(templateMatch, "content")
-                showMatchObject(match)
             }
         })
         .notFound(() => {
