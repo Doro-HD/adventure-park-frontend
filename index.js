@@ -9,6 +9,10 @@ import {
     fetchGetAllJSON
 } from "./apifetch.js"
 
+import {
+    loadHtmlCard
+} from "./pages/aktiviteter/aktiviteter.js"
+
 //import { initNavigate } from "./pages/navigate/navigate.js"
 //import { showMatchObject } from "./pages/show-match/match.js"
 //import { initUsers } from "./pages/users/users.js"
@@ -19,6 +23,7 @@ window.addEventListener("load", async () => {
   const templateAktiviteter = await loadHtml("./pages/aktiviteter/aktiviteter.html")
   const templateHome = await loadHtml("./pages/home/home.html")
   const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
+  const templateCard = await loadHtmlCard("./pages/aktiviteter/cardtemplate.html", "./pages/aktiviteter/cardorganizer.html")
   adjustForMissingHash()
 
 
@@ -39,10 +44,7 @@ window.addEventListener("load", async () => {
             renderTemplate(templateHome, "content")
         },
             "/aktiviteter": () => {
-                renderTemplate(templateAktiviteter, "content")
-                console.log(fetchMoviesJSON().then(movies => {
-                    movies; // fetched movies
-                  }))
+                renderTemplate(templateCard, "content")
 
             }
         })
@@ -57,3 +59,5 @@ window.onerror = function (errorMsg, url, lineNumber, column, errorObj) {
     alert('Error: ' + errorMsg + ' Script: ' + url + ' Line: ' + lineNumber
         + ' Column: ' + column + ' StackTrace: ' + errorObj);
 }
+
+
