@@ -8,6 +8,8 @@ export function renderTemplate(template, contentId) {
   content.append(template)
 }
 
+
+
 export async function loadHtml(page) {
   const resHtml = await fetch(page).then(r => {
     if (!r.ok) {
