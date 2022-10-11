@@ -48,8 +48,7 @@ window.addEventListener("load", async () => {
 
             },
             "/aktiviteter/:id": (param) => {
-                renderTemplate(loadActivitySubpage, "content")
-               
+               renderTemplate(loadActivitySubpage(param.data.id), "content")
 
             }
         })
