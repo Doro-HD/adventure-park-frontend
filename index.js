@@ -46,6 +46,11 @@ window.addEventListener("load", async () => {
             "/aktiviteter": () => {
                 renderTemplate(templateCard, "content")
 
+            },
+            "/aktiviteter/:id": () => {
+                renderTemplate(templateCard, "content")
+                console.log("Absolute pogchamp")
+
             }
         })
         .notFound(() => {

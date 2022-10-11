@@ -29,6 +29,7 @@ let activityArray = await fetchGetAllJSON();
 
 activityArray.forEach((result, id) => {
   let headerName = activityArray[id].name;
+  let headerId = activityArray[id].id;
   let description = activityArray[id].description;
   let ageRestriction = activityArray[id].ageRestriction;
 
@@ -44,7 +45,8 @@ activityArray.forEach((result, id) => {
               <p class="card-text">${description}</p>
               <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <a href="/aktiviteter" data-navigo>
+                  <a href="/aktiviteter/${id}" data-navigo>Aktiviteter
+                    
                       <button type="button" class="btn btn-sm btn-outline-secondary" >Læs mere!
                     </a>
                       
