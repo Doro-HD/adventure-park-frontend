@@ -39,9 +39,50 @@ export async function loadHtmlCard(page, organizer) {
   newElement2.innerHTML=cardDiv.outerHTML
 
 
-let coolstring="bruh"
+let activityArray = await fetchGetAllJSON()
+    console.log(coolstring)
+/*
+        entity.forEach((result, idx) => {
+            // Create card element
+            const card = document.createElement('div');
+            card.classList = 'card-body';
 
-let whatever= `
+            // Construct card content
+            const content = `
+    <div class="card">
+    <div class="card-header" id="heading-${idx}">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-${idx}" aria-expanded="true" aria-controls="collapse-${idx}">
+
+                </button>
+      </h5>
+    </div>
+
+    <div id="collapse-${idx}" class="collapse show" aria-labelledby="heading-${idx}" data-parent="#accordion">
+      <div class="card-body">
+
+        <h5>${result.name}</h5>
+        <p>${result.description}</p>
+        <p>${result.ageRestriction}</p>
+        ...
+      </div>
+    </div>
+  </div>
+  `;
+
+            container.innerHTML += content;
+        })
+ */
+
+
+  activityArray.forEach((result, id) => {
+
+
+
+    });
+
+
+let cardConstruct= `
 <div class="template">
 <div class="col">
     <div class="card shadow-sm">
@@ -49,7 +90,7 @@ let whatever= `
 
 
         <div class="card-body">
-            <p class="card-custom-header">${coolstring}</p>
+            <p class="card-custom-header">${xxxxx}</p>
             <p class="card-text">Spil paint</p>
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -64,7 +105,7 @@ let whatever= `
         </div>
     </div>
 </div>
-</div>` 
+</div>`
 
 
 
