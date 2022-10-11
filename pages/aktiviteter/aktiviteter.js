@@ -33,15 +33,13 @@ export async function loadHtmlCard(page, organizer) {
     const cardDiv = cardContent.querySelector(".template")
     console.log(cardDiv)
 
-  let newElement= document.createElement("div");
-  let newElement2= document.createElement("div");
-  newElement.innerHTML=cardDiv.outerHTML
-  newElement2.innerHTML=cardDiv.outerHTML
 
+  
+    let myJsonData = await fetchGetAllJSON;
+    console.log(myJsonData.name)
+    let coolstring=myJsonData.id;
 
-let coolstring="bruh"
-
-let whatever= `
+    let whatever= `
 <div class="template">
 <div class="col">
     <div class="card shadow-sm">
@@ -68,13 +66,7 @@ let whatever= `
 
 
 
-
-/*
-  organizerContent.getElementById("card-holder").appendChild(newElement)
-  organizerContent.getElementById("card-holder").appendChild(newElement2)
-  */
-  
-   // organizerContent.getElementById("card-holder").innerHTML = cardDiv.outerHTML;
+    organizerContent.getElementById("card-holder").innerHTML = cardDiv.outerHTML;
     organizerContent.getElementById("card-holder").innerHTML += whatever;
       
     console.log(organizerContent)
