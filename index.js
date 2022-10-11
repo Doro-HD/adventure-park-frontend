@@ -23,7 +23,7 @@ window.addEventListener("load", async () => {
   const templateAktiviteter = await loadHtml("./pages/aktiviteter/aktiviteter.html")
   const templateHome = await loadHtml("./pages/home/home.html")
   const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
-  const templateCard = await loadHtmlCard("./pages/aktiviteter/cardtemplate.html", "./pages/aktiviteter/cardorganizer.html")
+  const templateCard = await loadHtmlCard("./pages/aktiviteter/cardorganizer.html")
   adjustForMissingHash()
 
 
