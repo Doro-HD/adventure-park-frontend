@@ -10,6 +10,7 @@ import {
 } from "./apifetch.js"
 
 import {
+    loadActivitySubpage,
     loadHtmlCard
 } from "./pages/aktiviteter/aktiviteter.js"
 
@@ -20,7 +21,6 @@ import {
 
 window.addEventListener("load", async () => {
 
-  const templateAktiviteter = await loadHtml("./pages/aktiviteter/aktiviteter.html")
   const templateHome = await loadHtml("./pages/home/home.html")
   const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
   const templateCard = await loadHtmlCard("./pages/aktiviteter/cardorganizer.html")
@@ -47,9 +47,9 @@ window.addEventListener("load", async () => {
                 renderTemplate(templateCard, "content")
 
             },
-            "/aktiviteter/:id": () => {
-                renderTemplate(templateCard, "content")
-                console.log("Absolute pogchamp")
+            "/aktiviteter/:id": (param) => {
+                renderTemplate(loadActivitySubpage, "content")
+               
 
             }
         })

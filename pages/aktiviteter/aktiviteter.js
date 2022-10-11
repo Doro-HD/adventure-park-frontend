@@ -1,13 +1,11 @@
 
 import {
-    fetchGetAllJSON
+    fetchGetAllJSON, fetchJsonById
 } from "../../apifetch.js"
 
 
 
 export async function loadHtmlCard(organizer) {
-
-
     //fetches the organizer template. The divs that holds the outer structure of our cards
     const cardOrganizerHtml = await fetch(organizer).then(r => {
         if (!r.ok) {
@@ -45,7 +43,7 @@ activityArray.forEach((result, id) => {
               <p class="card-text">${description}</p>
               <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                  <a href="/aktiviteter/${id}" data-navigo>Aktiviteter
+                  <a href="/aktiviteter/${headerId}" data-navigo>Aktiviteter
                     
                       <button type="button" class="btn btn-sm btn-outline-secondary" >Læs mere!
                     </a>
@@ -68,6 +66,63 @@ activityArray.forEach((result, id) => {
     const organizerDiv = organizerContent.querySelector(".template")
     return organizerDiv
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export async function loadActivitySubpage(urlId) {
+
+let activityObject = await fetchJsonById();
+
+  let headerName = activityObject.name;
+  let headerId = activityObject.id;
+  let description = activityObject.description;
+  let ageRestriction = activityObject.ageRestriction;
+
+  let cardConstruct= `
+  <div class="template">
+    <div id="picture-header">
+        <section class="py-5 text-center container">
+  
+            <img src="../../staticcontent/adventureparkcard.png" alt="Adventure park" width="700" height="300">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">${headerName}</h1>
+                <p class="lead text-muted">${description}
+                    aktiviteter!</p>
+  
+            </div>
+        </section>
+      
+        <div>
+          <a href="/aktiviteter" data-navigo>
+          <button>Klik her for at se alle vores aktiviteter!
+          </button>
+        </a>
+        </div>
+  
+      
+    </div>
+  </div>`
+  
+
+  
+
+    
+    return cardConstruct;
+  };
+
 
 
 
