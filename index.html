@@ -15,34 +15,12 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/components/navbar/">
     <link rel="stylesheet" href="./staticcontent/meny-styles-non-responsive.css"/>
     <link rel="stylesheet" href="./staticcontent/customstyles.css"/>
+    <link rel="stylesheet" href="./staticcontent/loginform.css"/>
 
     <title>Document</title>
 </head>
 <body>
 
-
-<!--
-<div id="navbar" style="background-color: darkgrey">
-  <nav class="nav justify-content-center">
-      <ul class="nav justify-content-center">
-          <li class="nav-item">
-              <a class="nav-link" style="color: black" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" style="color: black" href="#" role="button"
-                 data-bs-toggle="dropdown">
-                  Aktiviteter</a>
-              <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="gocart" data-navigo>Gocart</a></li>
-                  <li><a class="dropdown-item" href="minigolf" data-navigo>Minigolf</a></li>
-                  <li><a class="dropdown-item" href="paintball" data-navigo>Paintball</a></li>
-                  <li><a class="dropdown-item" href="sumo" data-navigo>Sumo wrestling</a></li>
-              </ul>
-          </li>
-      </ul>
-  </nav>
-</div>
--->
 
 
     <div id="topnav">
@@ -53,6 +31,13 @@
             <li>
                 <a href="/aktiviteter" data-navigo>Aktiviteter</a>
             </li>
+            <li>
+                <a href="/aktiviteter">
+                    <button class="open-button" onclick="openForm()">Login</button>
+
+                </a>
+            </li>
+        
         
 
         </ul>
@@ -60,6 +45,22 @@
 
         <div id="content">
         </div>
+
+
+        <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+              <h1>Login</h1>
+          
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Enter Email" name="email" required>
+          
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+          
+              <button type="submit" class="btn">Login</button>
+              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+          </div>
 
 
         <script
@@ -77,4 +78,5 @@
     </div>
 </body>
 <script src="./index.js" type="module"></script>
+<script src="./loginform.js" type="module"></script>
 </html>
