@@ -14,6 +14,10 @@ import {
     loadHtmlCard
 } from "./pages/aktiviteter/aktiviteter.js"
 
+import {
+    loadEventlistener
+} from "./pages/login/login.js"
+
 //import { initNavigate } from "./pages/navigate/navigate.js"
 //import { showMatchObject } from "./pages/show-match/match.js"
 //import { initUsers } from "./pages/users/users.js"
@@ -54,6 +58,7 @@ window.addEventListener("load", async () => {
             },
             "/login": () => {
                 renderTemplate(templateLogin, "content")
+                loadEventlistener();
 
             }
         })

@@ -1,12 +1,51 @@
-function handleSubmit(event) {
-    event.preventDefault();
-    console.log("Epic gamer moemnt pog")
-    const data = new FormData(event.target);
+async function postFormDataAsJson({ url, formData }) {
+	const plainFormData = Object.fromEntries(formData.entries());
+	const formDataJsonString = JSON.stringify(plainFormData);
+  console.log(formDataJsonString)
 
-    const value = data.get('username');
+	const fetchOptions = {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+			Accept: "application/json",
+		},
+		body: formDataJsonString,
+	};
 
-    console.log({ value });
+	const response = await fetch(url, fetchOptions);
+
+	if (!response.ok) {
+		const errorMessage = await response.text();
+		throw new Error(errorMessage);
+	}
+
+	return response.json();
 }
 
-  const form = document.querySelector("submit");
-  form.addEventListener('submit', handleSubmit);
+/**
+ * Event handler for a form submit event.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event
+ *
+ * @param {SubmitEvent} event
+ */
+async function handleFormSubmit(event) {
+	event.preventDefault();
+
+	const form = event.currentTarget;
+	const url = form.action;
+
+	try {
+		const formData = new FormData(form);
+		const responseData = await postFormDataAsJson({ url, formData });
+
+		console.log({ responseData });
+	} catch (error) {
+		console.error(error);
+	}
+}
+
+export function loadEventlistener(){
+const exampleForm = document.getElementById("example-form");
+exampleForm.addEventListener("submit", handleFormSubmit);
+}
