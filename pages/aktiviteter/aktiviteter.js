@@ -19,10 +19,10 @@ export async function loadHtmlCard(organizer) {
     const organizerContent = parser.parseFromString(cardOrganizerHtml, "text/html")
     console.log(organizerContent)
 
-
+    //Array med alle JSON objekter
     let activityArray = await fetchGetAllJSON();
 
-
+    //Opretter nye kort pr. aktivitet i databasen
     activityArray.forEach((result, id) => {
         let headerName = activityArray[id].name;
         let headerId = activityArray[id].id;
@@ -65,7 +65,7 @@ export async function loadHtmlCard(organizer) {
     return organizerDiv
 };
 
-
+//Aktivitets underside
 export async function loadActivitySubpage(urlId) {
 
     let activityObject = await fetchJsonById(urlId);
