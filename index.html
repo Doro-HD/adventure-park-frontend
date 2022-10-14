@@ -15,66 +15,48 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/components/navbar/">
     <link rel="stylesheet" href="./staticcontent/meny-styles-non-responsive.css"/>
     <link rel="stylesheet" href="./staticcontent/customstyles.css"/>
+    <link rel="stylesheet" href="./staticcontent/loginform.css"/>
+
+    
 
     <title>Document</title>
 </head>
 <body>
 
 
-<!--
-<div id="navbar" style="background-color: darkgrey">
-  <nav class="nav justify-content-center">
-      <ul class="nav justify-content-center">
-          <li class="nav-item">
-              <a class="nav-link" style="color: black" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" style="color: black" href="#" role="button"
-                 data-bs-toggle="dropdown">
-                  Aktiviteter</a>
-              <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="gocart" data-navigo>Gocart</a></li>
-                  <li><a class="dropdown-item" href="minigolf" data-navigo>Minigolf</a></li>
-                  <li><a class="dropdown-item" href="paintball" data-navigo>Paintball</a></li>
-                  <li><a class="dropdown-item" href="sumo" data-navigo>Sumo wrestling</a></li>
-              </ul>
-          </li>
-      </ul>
-  </nav>
-</div>
--->
-
-
-    <div id="topnav">
-        <ul id="menu" class="menu-horizontal">
-            <li>
-                <a href="/" data-navigo>Home</a>
-            </li>
-            <li>
-                <a href="/aktiviteter" data-navigo>Aktiviteter</a>
-            </li>
+<div id="topnav">
+    <ul id="menu" class="menu-horizontal">
+        <li>
+            <a href="/" data-navigo>Home</a>
+        </li>
+        <li>
+            <a href="/aktiviteter" data-navigo>Aktiviteter</a>
+        </li>
+    <li style="float: right">
+        <a href="/login" data-navigo>Login</a>
         
+    </li>
+            
+       
 
-        </ul>
+    </ul>
 
 
-        <div id="content">
-        </div>
-
-
-        <script
-                src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-                crossorigin="anonymous">
-        </script>
-
-        <script
-                src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-                crossorigin="anonymous">
-        </script>
-
+    <div id="content">
     </div>
+
+
+
+    <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous">
+    </script>
+
+
+</div>
 </body>
 <script src="./index.js" type="module"></script>
+<script src="./loginform.js" type="module"></script>
+<script src="./pages/login/login.js" type="module"></script>
 </html>

@@ -14,6 +14,10 @@ import {
     loadHtmlCard
 } from "./pages/aktiviteter/aktiviteter.js"
 
+import {
+    loadEventlistener
+} from "./pages/login/login.js"
+
 //import { initNavigate } from "./pages/navigate/navigate.js"
 //import { showMatchObject } from "./pages/show-match/match.js"
 //import { initUsers } from "./pages/users/users.js"
@@ -24,6 +28,7 @@ window.addEventListener("load", async () => {
   const templateHome = await loadHtml("./pages/home/home.html")
   const templateNotFound = await loadHtml("./pages/notFound/notFound.html")
   const templateCard = await loadHtmlCard("./pages/aktiviteter/cardorganizer.html")
+  const templateLogin = await loadHtml("./pages/login/login.html")
   adjustForMissingHash()
 
 
@@ -49,6 +54,11 @@ window.addEventListener("load", async () => {
             },
             "/aktiviteter/:id": (param) => {
                renderTemplate(loadActivitySubpage(param.data.id), "content")
+
+            },
+            "/login": () => {
+                renderTemplate(templateLogin, "content")
+                loadEventlistener();
 
             }
         })
